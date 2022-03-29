@@ -1,0 +1,119 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100vh;
+  /* background: linear-gradient(to right, #3e5151, #decba4); */
+  background-color: #3a6073;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%2316222a' fill-opacity='0.4'%3E%3Cpath fill-rule='evenodd' d='M11 0l5 20H6l5-20zm42 31a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM0 72h40v4H0v-4zm0-8h31v4H0v-4zm20-16h20v4H20v-4zM0 56h40v4H0v-4zm63-25a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM53 41a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-30 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-28-8a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zM56 5a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zm-3 46a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM21 0l5 20H16l5-20zm43 64v-4h-4v4h-4v4h4v4h4v-4h4v-4h-4zM36 13h4v4h-4v-4zm4 4h4v4h-4v-4zm-4 4h4v4h-4v-4zm8-8h4v4h-4v-4z'/%3E%3C/g%3E%3C/svg%3E");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator {
+  background: #fff;
+  width: 40rem;
+  border-radius: 12px;
+  box-shadow: 0px 5px 30px -5px rgba(0, 0, 0, 0.4);
+}
+
+/* Display */
+.calculator-display {
+  background-color: #283048;
+  color: #fff;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-radius: 10px 10px 0 0;
+}
+
+.calculator-display h1 {
+  padding: 2.5rem;
+  font-size: 4.5rem;
+  font-family: 'Lucida Console', sans-serif;
+  font-weight: 100;
+  overflow-x: auto;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Buttons */
+.calculator-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+button {
+  min-height: 5rem;
+  font-size: 2rem;
+  font-weight: 100;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #acacac;
+}
+
+button:hover {
+  filter: brightness(110%);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+button:focus {
+  outline: none;
+}
+
+.operator {
+  background-color: #646464;
+  color: #ffffff;
+  font-size: 3rem;
+}
+
+.clear {
+  background-color: tomato;
+  color: #ffffff;
+}
+
+.clear:hover {
+  filter: brightness(90%);
+}
+
+.equal-sign {
+  grid-column: -2;
+  grid-row: 2 / span 4;
+  background-color: #01d1d1;
+}
+
+/* Media Query: Large Smartphone (Vertical) */
+@media screen and (max-width: 600px) {
+  .calculator {
+    width: 95%;
+  }
+}
